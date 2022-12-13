@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NASATest</string>
+    <string name="image_description">Mars Photo</string>
 </resources>
