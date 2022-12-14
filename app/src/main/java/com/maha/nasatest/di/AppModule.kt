@@ -3,6 +3,8 @@ package com.maha.nasatest.di
 import androidx.viewbinding.BuildConfig
 import com.maha.nasatest.data.remote.ApiService
 import com.maha.nasatest.data.remote.CloudConfig.BASE_URL
+import com.maha.nasatest.data.repository.RoverRepository
+import com.maha.nasatest.data.repository.RoverRepositoryImpl
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Binds
@@ -18,18 +20,17 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 
-@Module
 @InstallIn(SingletonComponent::class)
-interface AppModule {
+@Module
+object AppModule {
 
-    @Singleton
     @Provides
     fun provideApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
 
-    @Singleton
     @Provides
+    @Singleton
     fun provideRetrofit(client: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -46,12 +47,16 @@ interface AppModule {
     }
 
 
-    @Binds
+    @Provides
+    @Singleton
     fun provideOkHttpClient(): OkHttpClient {
         val client = OkHttpClient.Builder()
             .build()
         return client
     }
+
+
+
 
 
 }

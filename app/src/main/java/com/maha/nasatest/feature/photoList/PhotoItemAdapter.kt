@@ -2,6 +2,7 @@ package com.maha.nasatest.feature.photoList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.maha.nasatest.R
@@ -36,4 +37,13 @@ class PhotoItemAdapter (private val items :MutableList<Photo>) : RecyclerView.Ad
     override fun getItemCount(): Int {
           return items.size
     }
+
+    fun swap(items: List<Photo>) {
+        val diffCallback = PhotoDiffCallback(this.items, items)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+        this.items.clear()
+        this.items.addAll(items)
+        diffResult.dispatchUpdatesTo(this)
+    }
+
 }
