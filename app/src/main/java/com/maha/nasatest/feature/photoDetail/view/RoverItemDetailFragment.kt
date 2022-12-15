@@ -25,11 +25,16 @@ class RoverItemDetailFragment : Fragment() {
     ): View? {
         binding = FragmentRoverItemDetailBinding.inflate(layoutInflater)
         val view = binding.root
-
-        val photo = (arguments?.getBundle("item") ) as Photo
-        setupViews(photo)
         return view
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val photo = (arguments?.getBundle("rover_detail")) as Photo
+        setupViews(photo)
+
+    }
+
     fun setupViews(photo: Photo){
         val image = photo.img_src.replace("http","https")
         Glide

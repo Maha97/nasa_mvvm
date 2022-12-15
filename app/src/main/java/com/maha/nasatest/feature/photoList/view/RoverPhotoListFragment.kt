@@ -60,7 +60,7 @@ class RoverPhotoListFragment : Fragment(), PhotoItemAdapter.PhotoItemClickListen
     }
 
     override fun onClick(item: Photo) {
-        val bundle = bundleOf("item" to item)
+        val bundle = bundleOf("rover_detail" to item)
         findNavController().navigate(R.id.nav_roverlist_to_roverDetail, bundle)
     }
 

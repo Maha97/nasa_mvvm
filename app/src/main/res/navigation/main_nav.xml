@@ -13,7 +13,7 @@
 
         <argument
             android:name="rover_detail"
-            app:argType="string"/>
+            app:argType="com.maha.nasatest.data.entities.Photo"/>
     </fragment>
     <fragment android:id="@+id/nav_photo_detail"
         android:name="com.maha.nasatest.feature.photoDetail.view.RoverItemDetailFragment"/>
