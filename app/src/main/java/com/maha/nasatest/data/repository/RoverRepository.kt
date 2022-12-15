@@ -1,8 +1,6 @@
 package com.maha.nasatest.data.repository
 
-import com.maha.nasatest.data.remote.ApiService
-import com.maha.nasatest.data.responses.Photo
-import javax.inject.Inject
+import com.maha.nasatest.data.entities.Photo
 
 interface RoverRepository  {
 

@@ -13,10 +13,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".NasaTestApp"
         android:theme="@style/Theme.NASATest"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.view.HomeActivity"
+            android:name=".feature.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

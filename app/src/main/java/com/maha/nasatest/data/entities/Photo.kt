@@ -1,4 +1,4 @@
-package com.maha.nasatest.data.responses
+package com.maha.nasatest.data.entities
 
 data class Photo(
     val camera: Camera,

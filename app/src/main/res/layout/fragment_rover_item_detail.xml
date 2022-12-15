@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
+        android:id="@+id/iv_roverImage"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -12,5 +13,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:contentDescription="@string/rover_detail_photo" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

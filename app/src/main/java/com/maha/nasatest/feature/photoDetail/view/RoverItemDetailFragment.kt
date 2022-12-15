@@ -5,12 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.maha.nasatest.data.entities.Photo
+import com.maha.nasatest.databinding.FragmentRoverItemDetailBinding
+import com.maha.nasatest.databinding.FragmentRoverPhotoListBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
 class RoverItemDetailFragment : Fragment() {
 
+    private lateinit var binding: FragmentRoverItemDetailBinding
 
 
     override fun onCreateView(
@@ -18,6 +23,19 @@ class RoverItemDetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        binding = FragmentRoverItemDetailBinding.inflate(layoutInflater)
+        val view = binding.root
+
+        val photo = (arguments?.getBundle("item") ) as Photo
+        setupViews(photo)
+        return view
     }
+    fun setupViews(photo: Photo){
+        val image = photo.img_src.replace("http","https")
+        Glide
+            .with(binding.ivRoverImage.context)
+            .load(image)
+            .centerCrop()
+            .into(binding.ivRoverImage)    }
+
 }

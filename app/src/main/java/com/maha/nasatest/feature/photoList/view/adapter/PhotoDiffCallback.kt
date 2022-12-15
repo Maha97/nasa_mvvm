@@ -1,7 +1,7 @@
-package com.maha.nasatest.feature.photoList
+package com.maha.nasatest.feature.photoList.view.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.maha.nasatest.data.responses.Photo
+import com.maha.nasatest.data.entities.Photo
 
 class PhotoDiffCallback(
         private val oldList: List<Photo>,

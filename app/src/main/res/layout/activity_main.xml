@@ -4,16 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.view.HomeActivity">
+    tools:context=".feature.HomeActivity">
 
 <androidx.fragment.app.FragmentContainerView
     android:id="@+id/navHostFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:name="androidx.navigation.fragment.NavHostFragment"
     app:defaultNavHost="true"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:navGraph="@navigation/main_nav" />
+    app:navGraph="@navigation/main_nav"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
