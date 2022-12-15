@@ -45,6 +45,7 @@ dependencies {
     def paging_version = "3.1.1"
     def lifecycle_version = "2.5.1"
     def arch_version = "2.1.0"
+    def mockito = "4.2.0"
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
@@ -82,5 +83,12 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
     //Data Binding
     kapt 'com.android.databinding:compiler:3.1.4'
+    //Mockito
+    testImplementation "org.mockito:mockito-core:$mockito"
+    androidTestImplementation "org.mockito:mockito-android:$mockito"
+    testImplementation 'org.mockito:mockito-inline:4.2.0'
+    testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
+    // Mock Entities in testing
+    testImplementation("com.appmattus.fixture:fixture:1.2.0")
 
 }

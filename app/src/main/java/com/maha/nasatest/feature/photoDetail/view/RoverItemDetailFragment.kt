@@ -30,8 +30,8 @@ class RoverItemDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val photo = (arguments?.getBundle("rover_detail")) as Photo
-        setupViews(photo)
+        //val photo = (arguments?.getBundle("rover_detail")) as Photo
+        //setupViews(photo)
 
     }
 
