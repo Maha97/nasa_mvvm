@@ -7,24 +7,27 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.maha.nasatest.R
 import com.maha.nasatest.data.entities.Photo
 import com.maha.nasatest.databinding.FragmentRoverPhotoListBinding
 import com.maha.nasatest.feature.photoList.viewmodel.RoverViewModel
-import com.maha.nasatest.feature.photoList.view.adapter.PhotoItemAdapter
+import com.maha.nasatest.feature.photoList.view.adapter.PhotoListAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 
 
 @AndroidEntryPoint
-class RoverPhotoListFragment : Fragment(), PhotoItemAdapter.PhotoItemClickListener {
+class RoverPhotoListFragment : Fragment(), PhotoListAdapter.PhotoItemClickListener {
 
     private val viewModel: RoverViewModel by viewModels()
 
     private lateinit var binding: FragmentRoverPhotoListBinding
     private lateinit var mlayoutManager: LinearLayoutManager
-    lateinit var photoAdapter: PhotoItemAdapter
+    lateinit var photoAdapter: PhotoListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +36,6 @@ class RoverPhotoListFragment : Fragment(), PhotoItemAdapter.PhotoItemClickListen
     ): View? {
         binding = FragmentRoverPhotoListBinding.inflate(layoutInflater)
         val view = binding.root
-        viewModel.getPhotoList(1)
 
         setupRecyclerView()
         observeViewModel()
@@ -42,26 +44,26 @@ class RoverPhotoListFragment : Fragment(), PhotoItemAdapter.PhotoItemClickListen
 
 
     fun observeViewModel() {
-        viewModel.photoListLiveData.observe(viewLifecycleOwner, { photoList ->
-            photoAdapter.swap(photoList)
-
-        })
+        viewLifecycleOwner.lifecycleScope.launchWhenCreated {
+            viewModel.characters.collectLatest { pagingData ->
+                photoAdapter.submitData(pagingData)
+            }
+        }
     }
 
     fun setupRecyclerView() {
-        photoAdapter = PhotoItemAdapter(items = mutableListOf(), this)
-        mlayoutManager = LinearLayoutManager(requireContext())
+       mlayoutManager = LinearLayoutManager(requireContext())
         binding.rvPhotoList.run {
             layoutManager = mlayoutManager
             hasFixedSize()
         }
+        photoAdapter = PhotoListAdapter(this)
         binding.rvPhotoList.adapter = photoAdapter
 
     }
 
     override fun onClick(item: Photo) {
-      /*  val bundle = bundleOf("rover_detail" to item)
-        findNavController().navigate(R.id.nav_roverlist_to_roverDetail, bundle)*/
+        TODO("Not yet implemented")
     }
 
 }
