@@ -35,8 +35,6 @@ k
 ;app/src/main/java/com/maha/nasatest/data/entities/Camera.kt,f/a/fa249e3a6c621d347591e05565d9151df4fcf054
 j
 :app/src/main/java/com/maha/nasatest/data/entities/Rover.kt,2/2/22fca8fd189497301dc3afe7f8f15797e6e2d24e
-k
-;app/src/main/java/com/maha/nasatest/feature/HomeActivity.kt,3/9/399890ceebfd6d9df7183fea807966dbe7181ba9
 ~
 Napp/src/test/java/com/maha/nasatest/data/repository/RoverRepositoryImplTest.kt,6/8/68d4a63e3f1e8b9d565054b994bfda840fbeaa80
 f

@@ -11,9 +11,6 @@
         <action android:id="@+id/nav_roverlist_to_roverDetail"
             app:destination="@+id/nav_photo_detail"/>
 
-        <argument
-            android:name="rover_detail"
-            app:argType="com.maha.nasatest.data.entities.Photo"/>
     </fragment>
     <fragment android:id="@+id/nav_photo_detail"
         android:name="com.maha.nasatest.feature.photoDetail.view.RoverItemDetailFragment"/>

@@ -18,11 +18,11 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setActionBar()
+       // setActionBar()
     }
-    private fun setActionBar(){
+   /* private fun setActionBar(){
         val actionbar: ActionBar? = supportActionBar
-        actionbar?.title = "Mars Photos"
+        actionbar?.title = getString(R.string.app_name)
         actionbar?.elevation = 4.toFloat()
         actionbar?.setBackgroundDrawable(
             ColorDrawable(
@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
                     dagger.android.support.R.color.primary_dark_material_dark
                 ))
         )
-    }
+    }*/
 
 
 }

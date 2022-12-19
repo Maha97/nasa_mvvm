@@ -63,7 +63,9 @@ class RoverPhotoListFragment : Fragment(), PhotoListAdapter.PhotoItemClickListen
     }
 
     override fun onClick(item: Photo) {
-        TODO("Not yet implemented")
+        viewModel.selectItem(item)
+        findNavController().navigate(R.id.nav_roverlist_to_roverDetail)
+
     }
 
 }
