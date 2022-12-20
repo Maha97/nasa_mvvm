@@ -6,12 +6,12 @@
 
 
     <fragment android:id="@+id/nav_photo_list"
-         android:name="com.maha.nasatest.feature.photoList.view.RoverPhotoListFragment">
+         android:name="com.maha.nasatest.ui.photoList.view.RoverPhotoListFragment">
 
         <action android:id="@+id/nav_roverlist_to_roverDetail"
             app:destination="@+id/nav_photo_detail"/>
 
     </fragment>
     <fragment android:id="@+id/nav_photo_detail"
-        android:name="com.maha.nasatest.feature.photoDetail.view.RoverItemDetailFragment"/>
+        android:name="com.maha.nasatest.ui.photoDetail.view.RoverItemDetailFragment"/>
 </navigation>

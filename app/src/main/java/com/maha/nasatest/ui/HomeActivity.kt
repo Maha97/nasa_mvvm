@@ -1,13 +1,10 @@
-package com.maha.nasatest.feature
+package com.maha.nasatest.ui
 
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.navigation.NavController
-import androidx.navigation.NavDestination
-import androidx.navigation.fragment.NavHostFragment
 import com.maha.nasatest.R
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,19 +15,19 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       // setActionBar()
+        setActionBar()
     }
-   /* private fun setActionBar(){
+    private fun setActionBar(){
         val actionbar: ActionBar? = supportActionBar
-        actionbar?.title = getString(R.string.app_name)
+        actionbar?.title = getString(R.string.rover_photos)
         actionbar?.elevation = 4.toFloat()
         actionbar?.setBackgroundDrawable(
             ColorDrawable(
                 ContextCompat.getColor(this,
-                    dagger.android.support.R.color.primary_dark_material_dark
+                   androidx.appcompat.R.color.primary_dark_material_dark
                 ))
         )
-    }*/
+    }
 
 
 }

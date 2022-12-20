@@ -1,4 +1,4 @@
-package com.maha.nasatest.feature.photoList.view.adapter
+package com.maha.nasatest.ui.photoList.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -28,14 +28,15 @@ class PhotoListAdapter(private val listener: PhotoItemClickListener
                     item
                 )
             }
-            binding.tvLandingDate.setText(item.rover.landing_date)
-            binding.tvRoverName.setText(item.rover.name)
+            binding.earthDate.setText(item.rover.landing_date)
+            binding.roverName.setText(item.rover.name)
+            binding.cameraName.setText(item.camera.name)
             val image = item.img_src.replace("http", "https")
             Glide
                 .with(itemView.context)
                 .load(image)
                 .centerCrop()
-                .into(binding.ivRoverImage)
+                .into(binding.roverImage)
         }
     }
     override fun onBindViewHolder(

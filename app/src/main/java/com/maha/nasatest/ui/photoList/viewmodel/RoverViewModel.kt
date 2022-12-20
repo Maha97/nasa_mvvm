@@ -1,4 +1,4 @@
-package com.maha.nasatest.feature.photoList.viewmodel
+package com.maha.nasatest.ui.photoList.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,11 +11,7 @@ import androidx.paging.cachedIn
 import com.maha.nasatest.data.entities.Photo
 import com.maha.nasatest.data.repository.RoverRepository
 import com.maha.nasatest.data.paging.RoverPhotosDataSource
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

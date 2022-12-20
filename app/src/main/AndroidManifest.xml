@@ -17,7 +17,7 @@
         android:theme="@style/Theme.NASATest"
         tools:targetApi="31">
         <activity
-            android:name=".feature.HomeActivity"
+            android:name=".ui.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

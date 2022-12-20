@@ -1,22 +1,19 @@
-package com.maha.nasatest.feature.photoList.view
+package com.maha.nasatest.ui.photoList.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.maha.nasatest.R
 import com.maha.nasatest.data.entities.Photo
 import com.maha.nasatest.databinding.FragmentRoverPhotoListBinding
-import com.maha.nasatest.feature.photoList.viewmodel.RoverViewModel
-import com.maha.nasatest.feature.photoList.view.adapter.PhotoListAdapter
+import com.maha.nasatest.ui.photoList.viewmodel.RoverViewModel
+import com.maha.nasatest.ui.photoList.view.adapter.PhotoListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 

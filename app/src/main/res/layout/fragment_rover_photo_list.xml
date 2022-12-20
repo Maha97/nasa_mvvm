@@ -2,11 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_photo_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
+        tools:itemlist="@layout/item_photo"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,4 +2,9 @@
     <string name="app_name">NASATest</string>
     <string name="image_description">Mars Photo</string>
     <string name="rover_detail_photo">Rover Detail Photo</string>
+    <string name="retry">Retry</string>
+    <string name="rover_label">Rover :</string>
+    <string name="camera_name_label">Camera :</string>
+    <string name="date_label">Date :</string>
+    <string name="rover_photos">"Mars Rover "</string>
 </resources>

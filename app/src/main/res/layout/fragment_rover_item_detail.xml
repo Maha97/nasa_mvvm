@@ -3,20 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_rover_detailImage"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:scaleType="fitXY"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
         android:contentDescription="@string/rover_detail_photo" />
-    <TextView
-        android:id="@+id/tv_roverName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"/>
+
 
 
 </LinearLayout>

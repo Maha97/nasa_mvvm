@@ -1,4 +1,4 @@
-package com.maha.nasatest.feature.photoDetail.view
+package com.maha.nasatest.ui.photoDetail.view
 
 import android.os.Bundle
 import android.util.Log
@@ -7,13 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.maha.nasatest.data.entities.Photo
-import com.maha.nasatest.databinding.ActivityMainBinding
 import com.maha.nasatest.databinding.FragmentRoverItemDetailBinding
-import com.maha.nasatest.feature.photoList.viewmodel.RoverViewModel
+import com.maha.nasatest.ui.photoList.viewmodel.RoverViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -56,8 +54,6 @@ class RoverItemDetailFragment : Fragment() {
             .load(image)
             .centerCrop()
             .into(binding.ivRoverDetailImage)
-        binding.tvRoverName.setText(photo.rover.name)
-
 
     }
 }
