@@ -28,8 +28,8 @@ class RoverViewModel @Inject constructor(private val repo: RoverRepository) : Vi
     fun selectItem(item: Photo) {
         mutableSelectedItem.value = item
     }
-    val characters: Flow<PagingData<Photo>> =
-        Pager(config = PagingConfig(pageSize = 20, prefetchDistance = 2),
+    val roverPhotos: Flow<PagingData<Photo>> =
+        Pager(config = PagingConfig(pageSize = 10, prefetchDistance = 2),
             pagingSourceFactory = { RoverPhotosDataSource(repo) }
         ).flow.cachedIn(viewModelScope)
 
